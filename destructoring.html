@@ -1,0 +1,112 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+
+<body>
+
+    <!-- 1. Object Destructuring -->
+    <script>
+        const person = {
+            name: "Akanksha",
+            age: 22,
+            gender: "female"
+        };
+
+        const { name, age, gender } = person;
+
+        document.write("Name : " + name + "<br>");
+        document.write("Age : " + age + "<br>");
+        document.write("Gender : " + gender + "<br>");
+
+        console.log(name);
+        console.log(age);
+        console.log(gender);
+    </script>
+
+
+    <!-- 2. Destructuring Function Parameters -->
+    <script>
+        function showInfo({ name, age, city }) {
+            document.write(
+                `<br>Name : ${name}, Age : ${age}, City : ${city}<br>`
+            );
+        }
+
+        const person2 = {
+            name: "Akanksha",
+            age: 34,
+            city: "Pune"
+        };
+
+        showInfo(person2);
+    </script>
+
+
+    <!-- 3. Nested Object Destructuring -->
+    <script>
+        const student = {
+            uname: "Akanksha",
+            marks: {
+                maths: 90,
+                science: 87
+            }
+        };
+
+        const {
+            uname,
+            marks: { maths, science }
+        } = student;
+
+        document.write(
+            `<br>Username : ${uname}, Math : ${maths}, Science : ${science}<br>`
+        );
+    </script>
+
+
+    <!-- 4. Array Destructuring -->
+    <script>
+        const arrValue = ["one", "two", "three"];
+
+        const [x, y, z] = arrValue;
+
+        console.log(x);
+        console.log(y);
+        console.log(z);
+    </script>
+
+
+    <!-- 5. Swap Variables Using Destructuring -->
+    <script>
+        let a = 5;
+        let b = 10;
+
+        [a, b] = [b, a];
+
+        document.write(
+            `<br>a = ${a} and b = ${b}<br>`
+        );
+    </script>
+
+
+    <!-- 6. Array Destructuring with Rest Operator -->
+    <script>
+        const numbers = [10, 20, 30, 40, 50, 60, 70];
+
+        const [first, second, ...rest] = numbers;
+
+        console.log(first);
+        console.log(second);
+        console.log(rest);
+    </script>
+
+</body>
+
+</html>
+```
+

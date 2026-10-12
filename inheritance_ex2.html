@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilevel Inheritance</title>
+</head>
+
+<body>
+
+<script>
+
+    // Parent class
+    class Person {
+
+        constructor(name, age, salary, empId) {
+            this.name = name;
+            this.age = age;
+            this.salary = salary;
+            this.empId = empId;
+        }
+
+        showInfo() {
+            document.write(`
+                <h1>Person Info:</h1>
+                Name: ${this.name}<br>
+                Age: ${this.age}<br>
+                Salary: ${this.salary}<br>
+                Employee ID: ${this.empId}<br>
+            `);
+        }
+    }
+
+
+    // Child class
+    class Student extends Person {
+
+        constructor(name, age, salary, empId, rollNo) {
+
+            super(name, age, salary, empId);
+
+            this.rollNo = rollNo;
+        }
+
+        showStudent() {
+            document.write(`
+                <h1>Student Info:</h1>
+                Name: ${this.name}<br>
+                Age: ${this.age}<br>
+                Salary: ${this.salary}<br>
+                Employee ID: ${this.empId}<br>
+                Roll No: ${this.rollNo}<br>
+            `);
+        }
+    }
+
+
+    // Student Object 1
+    const s1 = new Student(
+        "Akanksha",
+        22,
+        30000,
+        "EMP101",
+        25
+    );
+
+    s1.showStudent();
+
+
+    // Student Object 2
+    const s2 = new Student(
+        "Shrisha",
+        23,
+        33000,
+        "EMP102",
+        26
+    );
+
+    s2.showStudent();
+
+
+    // Grandchild class
+    class GraduateStudent extends Student {
+
+        constructor(name, age, salary, empId, rollNo, degree) {
+
+            super(name, age, salary, empId, rollNo);
+
+            this.degree = degree;
+        }
+
+        showGraduate() {
+            document.write(`
+                <h1>Graduate Student Info:</h1>
+                Degree: ${this.degree}<br>
+            `);
+        }
+    }
+
+
+    // GraduateStudent Object
+    const g1 = new GraduateStudent(
+        "Akanksha",
+        21,
+        40000,
+        "EMP103",
+        1003,
+        "BCS"
+    );
+
+
+    // Method from Student
+    g1.showStudent();
+
+    // Method from GraduateStudent
+    g1.showGraduate();
+
+    // Method from Person
+    g1.showInfo();
+
+</script>
+
+</body>
+</html>

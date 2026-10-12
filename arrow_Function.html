@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+
+<body>
+
+<script>
+
+    // 1. Function without parameter
+
+    // Old style
+    function hello() {
+        console.log("Hello Students");
+    }
+
+    hello();
+
+    // Arrow function
+    const helloArrow = () => {
+        console.log("Hello Students using arrow");
+    };
+
+    helloArrow();
+
+
+    // 2. Function with one parameter
+
+    // Old style
+    function welcome(name) {
+        console.log("Welcome " + name);
+    }
+
+    welcome("Karan");
+
+    // Arrow function
+    const welcomeArrow = (name) => {
+        console.log("Welcome " + name);
+    };
+
+    welcomeArrow("Nagesh");
+
+
+    // 3. Function with multiple parameters
+
+    // Old style
+    function add(a, b) {
+        console.log(a + b);
+    }
+
+    add(10, 80);
+
+    // Arrow function
+    const addArrow = (a, b) => {
+        console.log(a + b);
+    };
+
+    addArrow(10, 80);
+
+
+    // 4. Function with return value
+
+    // Old style
+    function addition(x, y) {
+        return x + y;
+    }
+
+    let result = addition(23, 56);
+    console.log(result);
+
+    // Arrow function
+    const additionArrow = (x, y) => {
+        return x + y;
+    };
+
+    let result2 = additionArrow(56, 89);
+    console.log(result2);
+
+
+    // 5. Function return in string
+
+    // Old style
+    function sayHello(name) {
+        return "Hello " + name;
+    }
+
+    console.log(sayHello("Akanksha"));
+
+    // Arrow function
+    const sayHelloArrow = (name) => "Hello " + name;
+
+    console.log(sayHelloArrow("Neha"));
+
+
+    // 6. Arrow function with template literal
+
+    const fullName = (fname, lname) => `${fname} ${lname}`;
+
+    console.log(fullName("Neha", "Marathe"));
+
+
+    // 7. Multiple statements in arrow function
+
+    // Old style
+    function calculate(a, b) {
+        let sum = a + b;
+        let result = sum * 2;
+        return result;
+    }
+
+    console.log(calculate(10, 20));
+
+    // Arrow function
+    const calculateArrow = (a, b) => {
+        let sum = a + b;
+        let result = sum * 2;
+        return result;
+    };
+
+    console.log(calculateArrow(5, 20));
+
+
+    // 8. Arrow function returning object
+
+    const getStudent = () => ({
+        name: "Akanksha",
+        address: "Pune",
+        position: "Trainer"
+    });
+
+    console.log(getStudent());
+//arrow function is shorter way of writing a function  expression using =>
+</script>
+
+</body>
+</html>

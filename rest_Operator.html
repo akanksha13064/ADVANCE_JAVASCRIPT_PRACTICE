@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Operator</title>
+</head>
+
+<body>
+
+<script>
+
+    // Normal function
+
+    function sum(num1, num2) {
+        document.write(num1 + num2, "<br>");
+    }
+
+    sum(10, 20);
+    sum(10, 20, 30); 
+    // फक्त पहिले दोन parameters घेतले जातील → 30
+
+
+    // Rest Operator
+
+    function add(...numbers) {
+
+        let sum = 0;
+
+        for (let i in numbers) {
+            sum += numbers[i];
+        }
+
+        return sum;
+    }
+
+    document.write(add(12, 56, 67, 68) + "<br>");
+
+</script>
+
+<script>
+    function sumRest(name,...args){
+document.write(`Hello ${name}<br>`);
+
+let sum = 0;
+for (let i in args){
+    sum += arge[i];
+}
+        document.write("Total Marks" + sum  + "<br>");
+    }
+     sumRest("Akanksha",35,67,56,89);
+        
+</script>
+<script>
+    function sumRest(name, course, subject, ...marks) {
+
+        document.write(`Name ${name}<br>`);
+        document.write(`Course: ${course}<br>`);
+        document.write(`Subject: ${subject}<br>`);
+
+        let sum = 0;
+
+        for (let i in marks) {
+            sum += marks[i];
+        }
+
+        document.write(`Total Marks: ${sum}<br>`);
+    }
+
+    sumRest("Akanksha", "JavaScript", "Web Development", 35, 67, 56, 89);
+</script>
+
+<script>
+
+    function studentInfo(name,adddress,...subjects){
+        document.write(`Student name:${name} <br>`);
+        document.write(`Subjects : ${subjects}<hr>`);
+    }
+    studentInfo("Anand","pune","HTML","CSS","JS");
+    studentInfo("Anu","latur","HTML","CSS","JS");
+</script>
+
+<script>
+
+function showSum(name, ...numbers) {
+
+    let total = 0;
+
+    for (let num of numbers) {
+        total += num;
+    }
+
+    console.log(`Hello, ${name}`);
+    console.log(`You Entered ${numbers.length} numbers: ${numbers.join(", ")}`);
+    console.log(`Total: ${total}`);
+}
+
+showSum("Akanksha", 67, 89.78, 78);
+showSum("Nagesh", 67, 89.78, 78);
+
+</script>
+</body>
+</html>

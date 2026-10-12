@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript OOP</title>
+</head>
+
+<body>
+
+<script>
+
+// ========================================
+// OOP CONCEPTS IN JAVASCRIPT
+// ========================================
+
+
+// 1. CLASS
+// Person is a class (blueprint)
+
+class Person {
+
+    // 2. CONSTRUCTOR
+    // Constructor is automatically called
+    // when an object is created
+
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+
+    // Method
+    introduce() {
+        console.log(`My name is ${this.name}`);
+        console.log(`My age is ${this.age}`);
+    }
+}
+
+
+// ========================================
+// 3. INHERITANCE
+// ========================================
+
+// Student inherits properties and methods
+// from Person
+
+class Student extends Person {
+
+    constructor(name, age, course) {
+
+        // Calls parent class constructor
+        super(name, age);
+
+        this.course = course;
+    }
+
+
+    // ========================================
+    // 4. POLYMORPHISM
+    // ========================================
+
+    // Same method name as parent,
+    // but different implementation
+
+    introduce() {
+        console.log(`My name is ${this.name}`);
+        console.log(`My age is ${this.age}`);
+        console.log(`I study ${this.course}`);
+    }
+}
+
+
+// ========================================
+// 5. OBJECT
+// ========================================
+
+// Creating object from Student class
+
+const student1 = new Student(
+    "Akanksha",
+    22,
+    "Computer Engineering"
+);
+
+
+// Calling method
+
+student1.introduce();
+
+
+// ========================================
+// 6. ENCAPSULATION
+// ========================================
+
+class BankAccount {
+
+    // Private property
+    #balance = 0;
+
+
+    // Public method
+    deposit(amount) {
+        this.#balance += amount;
+    }
+
+
+    // Public method to access balance
+    getBalance() {
+        return this.#balance;
+    }
+}
+
+
+const account = new BankAccount();
+
+account.deposit(500);
+
+console.log("Account Balance:", account.getBalance());
+
+
+// ========================================
+// 7. ABSTRACTION
+// ========================================
+
+class Car {
+
+    start() {
+
+        // Internal implementation is hidden
+        this.#checkEngine();
+
+        console.log("Car started");
+    }
+
+
+    // Private method
+    #checkEngine() {
+        console.log("Engine checked");
+    }
+}
+
+
+const car = new Car();
+
+car.start();
+
+</script>
+
+</body>
+
+</html>
+```

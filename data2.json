@@ -1,0 +1,25 @@
+[{
+    "name": "Akanksha",
+    "age": 22,
+    "city": "Pune",
+    "skills": ["JAVA", "React"]
+},
+{
+    "name": "Rutuja",
+    "age": 23,
+    "city": "Sangali",
+    "skills": ["JAVA", "React","Python","SAP","Cloud Computing"]
+},
+{
+    "name": "Shrisha",
+    "age": 20,
+    "city": "pcmc",
+    "skills": ["JAVA", "React","Dotnet"]
+},
+{
+    "name": "Akash",
+    "age": 27,
+    "city": "Latur",
+    "skills": ["JAVA", "React","Devops"]
+}
+]

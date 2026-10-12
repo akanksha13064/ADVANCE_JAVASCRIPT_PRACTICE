@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch JSON File</title>
+</head>
+<body>
+
+    <h2>AJAX Example Using Fetch Method - Load JSON File</h2>
+
+    <button onclick="loadJSON()">Load JSON File</button>
+
+    <pre id="ajaxData">Click the button to load data</pre>
+
+    <script>
+        function loadJSON() {
+            fetch("data.json")
+                .then(response => {
+
+                    document.getElementById("ajaxData").textContent =
+                        "HTTP Status Code: " + response.status + "\n";
+
+                    if (!response.ok) {
+                        throw new Error("HTTP Error: " + response.status);
+                    }
+
+                    return response.json();
+                })
+                .then(data => {
+                    document.getElementById("ajaxData").textContent +=
+                        JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    document.getElementById("ajaxData").textContent +=
+                        "\n" + error.message;
+                });
+        }
+    </script>
+
+</body>
+</html>

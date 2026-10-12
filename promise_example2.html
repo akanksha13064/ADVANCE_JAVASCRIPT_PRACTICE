@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data Promise</title>
+</head>
+<body>
+    <script>
+        // Student data promise
+        function getStudentData() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("Student data received successfully");
+                }, 2000);
+            });
+        }
+
+        // Course data promise
+        function getCourseData() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("Course data received successfully");
+                }, 2000);
+            });
+        }
+
+        // Attendance data promise
+        function getAttendanceData() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("Attendance data received successfully");
+                }, 2000);
+            });
+        }
+
+        Promise.all([
+            getStudentData(),
+            getCourseData(),
+            getAttendanceData()
+        ])
+        .then((result) => {
+            console.log("All data received successfully");
+            console.log(result);
+        })
+        .catch((error) => {
+            console.log("Something went wrong");
+            console.log(error);
+        });
+    </script>
+</body>
+</html>

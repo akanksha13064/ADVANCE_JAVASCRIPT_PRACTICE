@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance Example</title>
+</head>
+<body>
+
+<script>
+
+    // Parent class
+    class Person {
+
+        constructor(name, age, salary, empId) {
+            this.name = name;
+            this.age = age;
+            this.salary = salary;
+            this.empId = empId;
+        }
+
+        showInfo() {
+            document.write(`
+                <h1>Person Info:</h1>
+                Name: ${this.name}<br>
+                Age: ${this.age}<br>
+                Salary: ${this.salary}<br>
+                Employee ID: ${this.empId}<br>
+            `);
+        }
+    }
+
+    // Child class
+    class Student extends Person {
+
+        constructor(name, age, salary, empId, rollNo) {
+            super(name, age, salary, empId);
+            this.rollNo = rollNo;
+        }
+
+        showStudent() {
+            document.write(`
+                <h1>Student Info:</h1>
+                Name: ${this.name}<br>
+                Age: ${this.age}<br>
+                Salary: ${this.salary}<br>
+            
+                Roll No: ${this.rollNo}<br>
+            `);
+        }
+    }
+
+    // Object creation
+    const s1 = new Student(
+        "Akanksha",
+        22,
+        30000,
+        25
+    );
+
+    s1.showStudent();
+
+    const s2 = new Student(
+        "shrisha",
+        23,
+        33000,
+        26
+    );
+
+    s2.showStudent();
+
+</script>
+
+</body>
+</html>
